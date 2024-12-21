@@ -1,0 +1,14 @@
+﻿@page "/counter"
+
+<p role="status">@display</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private string display = string.Empty;
+
+    private void IncrementCount()
+    {
+        display = string.Join(string.Empty, ShuffleItems().Take(14).Order());
+    }
+}
