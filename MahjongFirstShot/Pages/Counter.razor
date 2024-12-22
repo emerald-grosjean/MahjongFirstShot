@@ -9,6 +9,6 @@
 
     private void IncrementCount()
     {
-        display = string.Join(string.Empty, ShuffleItems().Take(14).Order().Select(x => Utils.DisplayName(x)));
+        display = string.Join(string.Empty, ShuffleItems().Take(14).Order().Select(x => TileUtils.DisplayName(x)));
     }
 }
