@@ -22,6 +22,6 @@
     private void IncrementCount()
     {
         Tiles.Clear();
-        Tiles.AddRange(ShuffleItems().Take(14).Order().Select(x => TileUtils.GetTile(x)));
+        Tiles.AddRange(ShuffleItems().Take(14).Order().Select(x => new Tile(x)));
     }
 }

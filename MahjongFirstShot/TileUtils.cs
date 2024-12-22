@@ -4,21 +4,9 @@ namespace MahjongFirstShot;
 
 public static class TileUtils
 {
-    public static Tile GetTile(int tileId)
-    {
-        var suit = (Suit)(Math.Ceiling((double)tileId / 9) - 1);
-        var number = tileId % 9;
-
-        return new()
-        {
-            Suit = suit,
-            Rank = number == 0 ? 9 : number,
-        };
-    }
-
     public static string FileName(Tile tile)
     {
-        return $"{tile.Suit.FileName()}{tile.Rank}";
+        return $"{tile.Suit.FileName()}{tile.Rank}{(tile.IsAka() ? "-aka" : string.Empty)}";
     }
 
     public static string FileName(this Suit suit)

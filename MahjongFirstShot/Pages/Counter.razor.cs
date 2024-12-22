@@ -6,10 +6,7 @@ partial class Counter
 
     public Counter()
     {
-        for (int i = 1; i <= 4; i++)
-        {
-            Items.AddRange(Enumerable.Range(1, 34));
-        }
+        Items.AddRange(Enumerable.Range(1, 34 * 4));
     }
 
     private IEnumerable<int> ShuffleItems()
