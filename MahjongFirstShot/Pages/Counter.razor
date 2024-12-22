@@ -1,14 +1,27 @@
 ﻿@page "/counter"
 
-<p role="status">@display</p>
+@if (Tiles.Any())
+{
+    <div class="tile-container">
+        @foreach(var tile in Tiles )
+        {
+            var fileName = TileUtils.FileName(tile);
+            var imageFileName = $"{fileName}.png";
+
+            <img src="/images/tiles/@imageFileName" alt="@fileName" />
+        }
+    </div>
+}
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private string display = string.Empty;
+
+    private readonly List<Tile> Tiles = [];
 
     private void IncrementCount()
     {
-        display = string.Join(string.Empty, ShuffleItems().Take(14).Order().Select(x => TileUtils.DisplayName(x)));
+        Tiles.Clear();
+        Tiles.AddRange(ShuffleItems().Take(14).Order().Select(x => TileUtils.GetTile(x)));
     }
 }
