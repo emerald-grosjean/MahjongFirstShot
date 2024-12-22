@@ -8,7 +8,7 @@ partial class Counter
     {
         for (int i = 1; i <= 4; i++)
         {
-            Items.AddRange(Enumerable.Range(1, 27));
+            Items.AddRange(Enumerable.Range(1, 34));
         }
     }
 
