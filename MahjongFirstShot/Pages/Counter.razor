@@ -13,11 +13,9 @@
         }
 
         @{
-            {
-                var fileName = TileUtils.FileName(Dora());
+            var doraFileName = TileUtils.FileName(Dora());
 
-                <img src="images/tiles/@(fileName).png" alt="@fileName" />
-            }
+            <img src="images/tiles/@(doraFileName).png" alt="@doraFileName" />
         }
 
         @for (int i = 1; i <= 4; i++)
