@@ -2,12 +2,7 @@
 
 partial class Counter
 {
-    private readonly List<int> Items = [];
-
-    public Counter()
-    {
-        Items.AddRange(Enumerable.Range(1, 34 * 4));
-    }
+    private readonly IReadOnlyList<int> Items = Enumerable.Range(1, 34 * 4).ToList().AsReadOnly();
 
     private IEnumerable<int> ShuffleItems()
     {
