@@ -1,5 +1,4 @@
-﻿@page "/counter"
-@using MahjongFirstShot.Models
+﻿@using MahjongFirstShot.Models
 @using MahjongFirstShot.Utils
 
 @if (Tiles.Any())
@@ -18,7 +17,6 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-
     private readonly List<Tile> Tiles = [];
 
     private void IncrementCount()
