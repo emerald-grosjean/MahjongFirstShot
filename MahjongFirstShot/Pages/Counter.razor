@@ -1,10 +1,40 @@
 ﻿@using MahjongFirstShot.Models
 @using MahjongFirstShot.Utils
 
-@if (Tiles.Any())
-{
+<div class="dora">
+    <label>
+        王牌:
+    </label>
+
     <div class="tile-container">
-        @foreach(var tile in Tiles )
+        @for (int i = 1; i <= 2; i++)
+        {
+            <img src="images/tiles/ura-green.png" alt="ura-green" />
+        }
+
+        @{
+            {
+                var fileName = TileUtils.FileName(Dora());
+                var imageFileName = $"{fileName}.png";
+
+                <img src="images/tiles/@imageFileName" alt="@fileName" />
+            }
+        }
+
+        @for (int i = 1; i <= 4; i++)
+        {
+            <img src="images/tiles/ura-green.png" alt="ura-green" />
+        }
+    </div>
+</div>
+
+<div class="hand">
+    <label>
+        手牌:
+    </label>
+
+    <div class="tile-container">
+        @foreach (var tile in HandTiles())
         {
             var fileName = TileUtils.FileName(tile);
             var imageFileName = $"{fileName}.png";
@@ -12,16 +42,31 @@
             <img src="images/tiles/@imageFileName" alt="@fileName" />
         }
     </div>
-}
+</div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="NewWall">Click me</button>
 
 @code {
-    private readonly List<Tile> Tiles = [];
+    private Wall Wall { get; set; } = null!;
 
-    private void IncrementCount()
+    protected override void OnInitialized()
     {
-        Tiles.Clear();
-        Tiles.AddRange(ShuffleItems().Take(14).Order().Select(x => new Tile(x)));
+        NewWall();
+    }
+
+    private void NewWall()
+    {
+        Wall = new Wall();
+    }
+
+    private IEnumerable<Tile> HandTiles()
+    {
+        return Wall.WallTileIds.Take(14).Order().Select(x => new Tile(x));
+    }
+
+    private Tile Dora()
+    {
+        var id = Wall.DeadWallTileIds.First();
+        return new Tile(id);
     }
 }
