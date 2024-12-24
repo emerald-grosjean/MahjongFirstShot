@@ -1,6 +1,7 @@
 ﻿using MahjongFirstShot.Enums;
+using MahjongFirstShot.Models;
 
-namespace MahjongFirstShot.Tests;
+namespace MahjongFirstShotTests.Models;
 
 [TestClass()]
 public class TileTests

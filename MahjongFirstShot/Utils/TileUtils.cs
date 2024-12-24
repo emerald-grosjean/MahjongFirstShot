@@ -1,6 +1,7 @@
 ﻿using MahjongFirstShot.Enums;
+using MahjongFirstShot.Models;
 
-namespace MahjongFirstShot;
+namespace MahjongFirstShot.Utils;
 
 public static class TileUtils
 {
