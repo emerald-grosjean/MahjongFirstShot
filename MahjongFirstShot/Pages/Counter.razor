@@ -15,9 +15,8 @@
         @{
             {
                 var fileName = TileUtils.FileName(Dora());
-                var imageFileName = $"{fileName}.png";
 
-                <img src="images/tiles/@imageFileName" alt="@fileName" />
+                <img src="images/tiles/@(fileName).png" alt="@fileName" />
             }
         }
 
@@ -37,9 +36,8 @@
         @foreach (var tile in HandTiles())
         {
             var fileName = TileUtils.FileName(tile);
-            var imageFileName = $"{fileName}.png";
 
-            <img src="images/tiles/@imageFileName" alt="@fileName" />
+            <img src="images/tiles/@(fileName).png" alt="@fileName" />
         }
     </div>
 </div>
