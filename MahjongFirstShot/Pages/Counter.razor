@@ -33,9 +33,13 @@
     <div class="tile-container">
         @foreach (var tile in HandTiles())
         {
+            var id = tile.Id;
             var fileName = TileUtils.FileName(tile);
 
-            <img src="images/tiles/@(fileName).png" alt="@fileName" />
+            <img class="tile @(darkTiles.Contains(id) ? "dark" : "")"
+            src="images/tiles/@(fileName).png"
+            alt="@fileName"
+            @onclick="() => ToggleDark(id)" />
         }
     </div>
 </div>
@@ -44,6 +48,7 @@
 
 @code {
     private Wall Wall { get; set; } = null!;
+    private HashSet<int> darkTiles = new();
 
     protected override void OnInitialized()
     {
@@ -53,6 +58,7 @@
     private void NewWall()
     {
         Wall = new Wall();
+        darkTiles.Clear();
     }
 
     private IEnumerable<Tile> HandTiles()
@@ -64,5 +70,17 @@
     {
         var id = Wall.DeadWallTileIds.First();
         return new Tile(id);
+    }
+
+    private void ToggleDark(int id)
+    {
+        if (darkTiles.Contains(id))
+        {
+            darkTiles.Remove(id);
+        }
+        else
+        {
+            darkTiles.Add(id);
+        }
     }
 }
