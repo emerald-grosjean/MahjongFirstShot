@@ -25,3 +25,7 @@
     .tile:not(.dark):hover {
         filter: brightness(0.8);
     }
+
+.btn-primary {
+    margin-top: 2rem;
+}
