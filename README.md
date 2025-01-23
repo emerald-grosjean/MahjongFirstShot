@@ -1,4 +1,4 @@
-# ”z”v—ûK
+# é…ç‰Œç·´ç¿’
 
 ![GitHub Workflow Status](https://github.com/emerald-grosjean/MahjongFirstShot/actions/workflows/gh-pages.yml/badge.svg)
 
