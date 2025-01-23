@@ -1,6 +1,6 @@
 {
-  "name": "MahjongFirstShot",
-  "short_name": "MahjongFirstShot",
+  "name": "配牌練習",
+  "short_name": "配牌練習",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
