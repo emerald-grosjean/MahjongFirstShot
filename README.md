@@ -1,4 +1,4 @@
-# 配牌練習
+# 麻雀配牌
 
 ![GitHub Workflow Status](https://github.com/emerald-grosjean/MahjongFirstShot/actions/workflows/gh-pages.yml/badge.svg)
 

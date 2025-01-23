@@ -1,6 +1,6 @@
 {
-  "name": "配牌練習",
-  "short_name": "配牌練習",
+  "name": "麻雀配牌",
+  "short_name": "麻雀配牌",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
